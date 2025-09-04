@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <ClientLayout>
-      {/* Meta Pixel - carrega após interação para não bloquear a renderização */}
+      {/* Meta Pixel */}
       <Script id="meta-pixel" strategy="afterInteractive">
         {`
           !function(f,b,e,v,n,t,s)
@@ -43,6 +43,13 @@ export default function RootLayout({
           alt=""
         />
       </noscript>
+
+      {/* UTMify Script */}
+      <Script
+        src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+        data-utmify-prevent-subids
+        strategy="afterInteractive"
+      />
 
       {children}
     </ClientLayout>
